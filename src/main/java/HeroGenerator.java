@@ -9,11 +9,11 @@ public class HeroGenerator {
         String[] classes = {"Warrior", "Wizard", "Rogue", "Cleric"};
         int[] statValues = {0,0,0,0};
 
-        double doubleRand2 = Math.random() * classes.length;
-        int rand2 = (int) Math.floor(doubleRand2);
-        System.out.print(classes[rand2]);
+        double doubleRand0 = Math.random() * classes.length;
+        int rand0 = (int) Math.floor(doubleRand0);
+        System.out.print(classes[rand0]);
 
-        switch(classes[rand2]){
+        switch(classes[rand0]){
             case "Warrior":
                 statValues[0] += 10;
                 break;
@@ -29,10 +29,14 @@ public class HeroGenerator {
         }
 
         for(int i = 0; i < statValues.length; i++){
-            double doubleRand1 = Math.random() * 18;
-            doubleRand1 += 7;
+            double doubleRand1 = Math.random() * 9;
+            doubleRand1 += 1;
             int rand1 = (int) Math.floor(doubleRand1);
-            statValues[i] += rand1;
+            double doubleRand2 = Math.random() * 9;
+            doubleRand2 += 1;
+            int rand2 = (int) Math.floor(doubleRand2);
+            int randResult = rand1 + rand2;
+            statValues[i] += randResult;
             System.out.print("\n" + statTypes[i] + ": " + statValues[i]);
         }
     }
