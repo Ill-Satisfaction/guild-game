@@ -4,33 +4,41 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/*
+ * this is a utility used to create random names from a file of random syllables.
+ * call 'syllabicNameGenerator' in order to get a name
+ */
 public class NameGenerator {
-	private ArrayList<String> syls;
+	private static ArrayList<String> syls = new ArrayList<String>();
+	private String randName = "";
+	private int numSyls = 0;
 
-	public void fileReader(String fname) throws IOException{
+
+	
+	public String syllabicNameGenerator(String fname) throws IOException {
+		return this.syllabicNameGenerator(fname, 3);
+	}
+
+	public String  syllabicNameGenerator(String fname, int numSyls) throws IOException{
+		createSylsFromFile(fname);	// load syls from file into arraylist
+
+		for(int i=0; i<numSyls; i++)	// string together random syllables
+			randName += randSyl();
+		randName = randName.substring(0,1).toUpperCase() + randName.substring(1);	// first letter to uppercase
+
+		return randName;
+	}
+
+	private void createSylsFromFile(String fname) throws IOException{
 		File report = new File ("main/resources/" + fname + ".txt");
 		Scanner sc = new Scanner(report);
-		String syl = "";
-		syls = new ArrayList<String>();
 		while (sc.hasNextLine()) {
 			syls.add(sc.nextLine());
 		}
 		sc.close();
 	}
 
-	public String syllableReader(String fname) throws IOException {
-		double doubleRand1 = Math.random() * syls.size();
-		int rand1 = (int) Math.floor(doubleRand1);
-		String returnSyl = syls.get(rand1);
-		return returnSyl;
-	}
-	public String syllabicNameGenerator(String fname) throws IOException {
-		fileReader(fname);
-		String name = "";
-		for(int i = 0; i < 3; i++){
-			name += syllableReader(fname);
-		}
-		System.out.print(name);
-		return "";
+	private String randSyl() throws IOException {
+		return syls.get( (int) Math.floor( Math.random()*syls.size() ) );
 	}
 }
