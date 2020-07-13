@@ -41,9 +41,8 @@ public class GameDriver {
 		
 		return retval;*/
 		
-		NameGenerator ng = new NameGenerator();
-		ng.syllabicNameGenerator("peopleSyllables");
-		
+		HeroGenerator hg = new HeroGenerator();
+		hg.heroGenerator();
 		return "";
 	}
 	
