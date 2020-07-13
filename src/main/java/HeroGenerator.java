@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class HeroGenerator {
     public void heroGenerator() throws IOException {
         NameGenerator ng = new NameGenerator();
-        System.out.println(ng.syllabicNameGenerator("peopleSyllables", 1));
+        System.out.println(ng.syllabicNameGenerator("peopleSyllables", 3));
         String[] statTypes = {"Strength", "Intelligence", "Dexterity", "Faith"};
         String[] classes = {"Warrior", "Wizard", "Rogue", "Cleric"};
         int[] statValues = {0,0,0,0};
