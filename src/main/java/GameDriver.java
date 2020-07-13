@@ -41,8 +41,11 @@ public class GameDriver {
 		
 		return retval;*/
 		
-		HeroGenerator hg = new HeroGenerator();
-		hg.heroGenerator();
+		HeroManager hm = new HeroManager();
+		for (int i = 0; i < 3; i++){
+			HeroGenerator hg = new HeroGenerator(hm);
+		}
+		hm.heroNames();
 		return "";
 	}
 	

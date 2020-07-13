@@ -2,17 +2,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class HeroGenerator {
-    public void heroGenerator() throws IOException {
+    public HeroGenerator(HeroManager hm) throws IOException {
         NameGenerator ng = new NameGenerator();
 
-        String[] statTypes = {"Strength", "Intelligence", "Dexterity", "Faith"};
+        String[] statTypes = {"Strength", "Intelligence", "Dexterity", "Spirit"};
         String[] classes = {"Warrior", "Wizard", "Rogue", "Cleric"};
         int[] statValues = {0,0,0,0};
-
         double doubleRand0 = Math.random() * classes.length;
         int rand0 = (int) Math.floor(doubleRand0);
-
-
         switch(classes[rand0]){
             case "Warrior":
                 statValues[0] += 10;
@@ -38,7 +35,12 @@ public class HeroGenerator {
             int randResult = rand1 + rand2;
             statValues[i] += randResult;
         }
-        Hero hero = new Hero(ng.syllabicNameGenerator("peopleSyllables", 3), classes[rand0], statValues);
-        hero.printData();
+        Hero newHero = new Hero(ng.syllabicNameGenerator("peopleSyllables", 3), classes[rand0], statValues);
+        //newHero.printData();
+        hm.heroAdder(newHero);
+        System.out.println(hm.numHeroes());
+
+
     }
+
 }
