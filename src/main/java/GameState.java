@@ -1,5 +1,3 @@
-package guildGame;
-
 public class GameState {
 	private static boolean game_done = false;
 	private static int turn;

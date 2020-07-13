@@ -1,4 +1,3 @@
-package guildGame;
 import java.io.IOException;
 import 	java.lang.Math;
 import java.io.File;
@@ -9,7 +8,7 @@ public class NameGenerator {
 	private ArrayList<String> syls;
 
 	public void fileReader(String fname) throws IOException{
-		File report = new File ("resources/" + fname + ".txt");
+		File report = new File ("main/resources/" + fname + ".txt");
 		Scanner sc = new Scanner(report);
 		String syl = "";
 		syls = new ArrayList<String>();
