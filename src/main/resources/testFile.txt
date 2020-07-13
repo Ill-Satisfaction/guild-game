@@ -1,0 +1,10 @@
+---
+ STATUS:
+ > Turn:	$
+ > Gold:	$, $
+ > Heros:	$
+		
+---
+ MENU:
+ 1] ADD 3 GOLD
+ 2] ADD 1 G/T
