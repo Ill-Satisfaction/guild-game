@@ -46,6 +46,7 @@ public class GameDriver {
 			HeroGenerator hg = new HeroGenerator(hm);
 		}
 		hm.heroNames();
+		QuestGenerator qg = new QuestGenerator();
 		return "";
 	}
 	

@@ -1,5 +1,5 @@
 import java.io.IOException;
-import 	java.lang.Math;
+import java.lang.Math;
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
