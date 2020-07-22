@@ -61,21 +61,6 @@ public class GameDriver {
 		if (gs.getGold()>20) GameState.setGame_done(true); 	//	? end game
 	}
 	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
 

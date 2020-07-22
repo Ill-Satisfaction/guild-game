@@ -19,8 +19,8 @@ public class QuestGenerator {
         }
         sc.close();
         System.out.println(quests);
-        switch(balls){
-            
-        }
+        //switch(balls){
+
+
     }
 }
